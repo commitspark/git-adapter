@@ -1,0 +1,11 @@
+{
+  "name": "contentlab-git-adapter",
+  "description": "Package providing interfaces to implement Git adapters for Contentlab",
+  "version": "0.2.0",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "main": "src/index.ts"
+}
