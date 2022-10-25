@@ -3,7 +3,7 @@ import { Commit } from './model/commit'
 import { ContentEntry } from './model/content-entry'
 
 export interface GitAdapter {
-  setRepositoryOptions(repositoryOptions: GitRepositoryOptions): void
+  setRepositoryOptions(repositoryOptions: GitRepositoryOptions): Promise<void>
   getContentEntries(ref: string): Promise<ContentEntry[]>
   getSchema(ref: string): Promise<string>
   getLatestCommitSha(ref: string): Promise<string>
