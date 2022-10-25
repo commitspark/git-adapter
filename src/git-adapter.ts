@@ -4,9 +4,9 @@ import { ContentEntry } from './model/content-entry'
 
 export interface GitAdapter {
   setRepositoryOptions(repositoryOptions: GitRepositoryOptions): Promise<void>
-  getContentEntries(ref: string): Promise<ContentEntry[]>
-  getSchema(ref: string): Promise<string>
-  getLatestCommitSha(ref: string): Promise<string>
+  getContentEntries(commitHash: string): Promise<ContentEntry[]>
+  getSchema(commitHash: string): Promise<string>
+  getLatestCommitHash(ref: string): Promise<string>
   createCommit(commitDraft: CommitDraft): Promise<Commit>
 }
 

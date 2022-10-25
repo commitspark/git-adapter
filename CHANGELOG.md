@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Change repository options setter to async
+- Clarify that content read operations use commit hash instead of ref
 
 ## [0.3.1] - 2022-10-05
 ### Fixed
