@@ -1,7 +1,7 @@
 {
   "name": "@contentlab/git-adapter",
   "description": "Package providing interfaces to implement Git adapters for Contentlab",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "license": "ISC",
   "private": false,
   "devDependencies": {

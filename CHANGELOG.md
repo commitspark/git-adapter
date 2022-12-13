@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2022-12-13
+### Changed
+- Change constants to support file path and entries folder path as repository options
+
 ## [0.5.0] - 2022-11-01
 ### Changed
 - Move NPM package to `@contentlab` organization namespace
