@@ -1,10 +1,8 @@
 import { ContentEntryDraft } from './content-entry-draft'
 
-export class CommitDraft {
-  constructor(
-    readonly ref: string,
-    readonly parentSha: string | undefined,
-    readonly message: string,
-    readonly contentEntries: ContentEntryDraft[],
-  ) {}
+export interface CommitDraft {
+  ref: string
+  parentSha: string | undefined
+  message: string
+  contentEntries: ContentEntryDraft[]
 }

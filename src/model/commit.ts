@@ -1,3 +1,3 @@
-export class Commit {
-  constructor(readonly ref: string) {}
+export interface Commit {
+  ref: string
 }

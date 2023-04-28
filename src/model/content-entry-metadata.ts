@@ -1,3 +1,3 @@
-export class ContentEntryMetadata {
-  constructor(public readonly type: string) {}
+export interface ContentEntryMetadata {
+  type: string
 }
