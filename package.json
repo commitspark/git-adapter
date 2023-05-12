@@ -1,6 +1,6 @@
 {
-  "name": "@contentlab/git-adapter",
-  "description": "Package providing interfaces to implement Git adapters for Contentlab",
+  "name": "@commitspark/git-adapter",
+  "description": "Package providing interfaces to implement Git adapters for Commitspark",
   "version": "0.7.0",
   "license": "ISC",
   "private": false,

@@ -1,8 +1,7 @@
 # Introduction
-**[Contentlab](https://contentlab.sh) is a library that generates a GraphQL content management API on top of
-a Git repository.**
+**[Commitspark](https://commitspark.com) is a workflow-first Content Management System based on Git and GraphQL.**
 
-This package provides interfaces to implement Git adapters for Contentlab.
+This package provides interfaces to implement Git adapters for Commitspark.
 
 # License
 
