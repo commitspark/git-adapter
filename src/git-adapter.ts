@@ -13,5 +13,5 @@ export interface GitAdapter {
 export type GitRepositoryOptions = Record<string, any>
 
 export const ENTRY_EXTENSION = '.yaml'
-export const PATH_ENTRY_FOLDER = 'entries/'
-export const PATH_SCHEMA_FILE = 'schema/schema.graphql'
+export const PATH_ENTRY_FOLDER = 'commitspark/entries/'
+export const PATH_SCHEMA_FILE = 'commitspark/schema/schema.graphql'
