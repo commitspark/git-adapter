@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Change folder defaults to common base folder `commitspark`
 
+### Fixed
+- Fix build process to include only relevant files
+
 ## [0.8.0] - 2023-05-12
 ### Changed
 - Rename organization
