@@ -1,5 +1,5 @@
 # Introduction
-**[Commitspark](https://commitspark.com) is a workflow-first Content Management System based on Git and GraphQL.**
+**[Commitspark](https://commitspark.com) is a Content Management System based on Git and GraphQL.**
 
 This package provides interfaces to implement Git adapters for Commitspark.
 
