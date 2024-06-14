@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Metadata field to allow tracking incoming references to an entry
+- Regex to check entry IDs for invalid characters
 
 ### Changed
 - Content entry data is now optional to support cases where no data is needed

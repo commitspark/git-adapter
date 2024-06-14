@@ -15,3 +15,5 @@ export type GitRepositoryOptions = Record<string, any>
 export const ENTRY_EXTENSION = '.yaml'
 export const PATH_ENTRY_FOLDER = 'commitspark/entries/'
 export const PATH_SCHEMA_FILE = 'commitspark/schema/schema.graphql'
+
+export const ENTRY_ID_INVALID_CHARACTERS = /[/\\*"<>:|?\u0000-\u001F]/
