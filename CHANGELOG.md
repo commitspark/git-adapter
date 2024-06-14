@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Metadata field to allow tracking incoming references to an entry
 
+### Changed
+- Content entry data is now optional to support cases where no data is needed
+
 ## [0.10.0] - 2023-12-12
 ### Changed
 - Reduce number of files included in NPM package
