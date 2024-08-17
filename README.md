@@ -1,7 +1,12 @@
 # Introduction
-**[Commitspark](https://commitspark.com) is a Content Management System based on Git and GraphQL.**
 
-This package provides interfaces to implement Git adapters for Commitspark.
+[Commitspark](https://commitspark.com) is a set of tools to manage structured data with Git
+through a GraphQL API.
+
+This package provides interfaces that abstract away concrete Git repository storage locations from
+the [Commitspark GraphQL API](https://github.com/commitspark/graphql-api) implementation. Implement these interfaces
+to support a custom Git repository storage that is not already covered by one of the adapters provided by Commitspark.
+
 
 # License
 
