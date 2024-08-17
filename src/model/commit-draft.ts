@@ -1,8 +1,8 @@
-import { ContentEntryDraft } from './content-entry-draft'
+import { EntryDraft } from './entry-draft'
 
 export interface CommitDraft {
   ref: string
   parentSha: string | undefined
   message: string
-  contentEntries: ContentEntryDraft[]
+  contentEntries: EntryDraft[]
 }

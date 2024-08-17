@@ -1,10 +1,10 @@
 import { CommitDraft } from './model/commit-draft'
 import { Commit } from './model/commit'
-import { ContentEntry } from './model/content-entry'
+import { Entry } from './model/entry'
 
 export interface GitAdapter {
   setRepositoryOptions(repositoryOptions: GitRepositoryOptions): Promise<void>
-  getContentEntries(commitHash: string): Promise<ContentEntry[]>
+  getEntries(commitHash: string): Promise<Entry[]>
   getSchema(commitHash: string): Promise<string>
   getLatestCommitHash(ref: string): Promise<string>
   createCommit(commitDraft: CommitDraft): Promise<Commit>
