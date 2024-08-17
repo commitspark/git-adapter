@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Change model and interface names to be use case agnostic
+- Update dependencies
 
 ## [0.11.0] - 2024-06-14
 ### Added
