@@ -4,5 +4,5 @@ export interface CommitDraft {
   ref: string
   parentSha: string | undefined
   message: string
-  contentEntries: EntryDraft[]
+  entries: EntryDraft[]
 }
