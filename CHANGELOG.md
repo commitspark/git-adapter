@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add error codes and error class for exposing typical error cases without revealing implementation details
 
+### Changed
+
+- Refactor library packaging to support ESM and CJS
+
 ### Removed
 
 - Remove definitions that should be implementation details and document these as conventions instead
