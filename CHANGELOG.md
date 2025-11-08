@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add error codes and error class for exposing typical error cases without revealing implementation details
+
 ### Removed
 
 - Remove definitions that should be implementation details and document these as conventions instead

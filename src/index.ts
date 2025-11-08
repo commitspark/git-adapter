@@ -1,4 +1,5 @@
 export * from './git-adapter'
+export * from './errors'
 export { Commit } from './model/commit'
 export { CommitDraft } from './model/commit-draft'
 export { Entry, EntryData, EntryMetadata } from './model/entry'
