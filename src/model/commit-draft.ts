@@ -1,4 +1,4 @@
-import { EntryDraft } from './entry-draft'
+import { EntryDraft } from './entry-draft.ts'
 
 export interface CommitDraft {
   ref: string
