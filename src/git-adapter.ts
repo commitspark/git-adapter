@@ -1,6 +1,6 @@
-import { CommitDraft } from './model/commit-draft'
-import { Commit } from './model/commit'
-import { Entry } from './model/entry'
+import { CommitDraft } from './model/commit-draft.ts'
+import { Commit } from './model/commit.ts'
+import { Entry } from './model/entry.ts'
 
 export interface GitAdapter {
   getEntries(commitHash: string): Promise<Entry[]>
