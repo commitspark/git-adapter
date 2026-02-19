@@ -1,7 +1,7 @@
 {
   "name": "@commitspark/git-adapter",
   "description": "Interfaces for implementing Commitspark Git adapters",
-  "version": "0.20.0",
+  "version": "0.20.1",
   "license": "ISC",
   "private": false,
   "files": [
