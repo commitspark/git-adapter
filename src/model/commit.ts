@@ -1,3 +1,3 @@
 export interface Commit {
-  ref: string
+  commitHash: string
 }
