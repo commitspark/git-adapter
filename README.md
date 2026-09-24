@@ -16,6 +16,8 @@ The following conventions should be applied in adapter implementations:
     * **Schema storage**: The GraphQL schema file should be stored under `commitspark/schema/schema.graphql`.
     * **Entry storage**: Entries should be stored under `commitspark/entries/`.
 * **Entry file type**: Entry data should be stored using YAML files with extension `.yaml`.
+* **Entry hashes**: The hash returned for an entry should be the Git blob hash of the entry file. Any other hash
+  is acceptable as long as equal hashes imply equal file content.
 * **Errors**: Adapters should throw known errors using the `GitAdapterError` class with one of the predefined
   `ErrorCode` values so that callers are able to handle errors meaningfully.
 
