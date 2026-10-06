@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- Remove field `referencedBy` from `EntryMetadata`, as incoming references are no longer stored in entries
+
 ### Changed
 
 - Publish separate type declarations for the ESM and CJS builds and reference them per condition in `exports` of
