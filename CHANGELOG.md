@@ -7,15 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Removed
+### Added
 
-- Remove field `referencedBy` from `EntryMetadata`, as incoming references are no longer stored in entries
+- Add function `validateEntryId()` that adapters and callers can use to reject invalid entry IDs
+- Add function `isHiddenPath()` to identify hidden files and folders, which are not entries
 
 ### Changed
 
+- Permit `/` in entry IDs, mapping each ID to a file in a subfolder of the entry folder; document the adapter
+  conventions for entry files in subfolders
 - Publish separate type declarations for the ESM and CJS builds and reference them per condition in `exports` of
   `package.json`, so that TypeScript projects that import this package from ESM code with `moduleResolution` set to
   `node16` or `nodenext` receive correct types. Type declarations are no longer located in `dist/types`.
+
+### Removed
+
+- Remove field `referencedBy` from `EntryMetadata`, as incoming references are no longer stored in entries
+- Remove constant `ENTRY_ID_INVALID_CHARACTERS`; use `validateEntryId()` instead
 
 ## [2.0.0-beta.1] - 2026-09-24
 
