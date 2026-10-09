@@ -16,5 +16,3 @@ export interface GitAdapter {
   getLatestCommitHash(ref: string): Promise<string>
   createCommit(commitDraft: CommitDraft): Promise<Commit>
 }
-
-export const ENTRY_ID_INVALID_CHARACTERS = /[/\\*"<>:|?\u0000-\u001F]/

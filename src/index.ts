@@ -1,5 +1,6 @@
 export * from './git-adapter.ts'
 export * from './errors.ts'
+export { isHiddenPath, validateEntryId } from './entry-id.ts'
 export { Commit } from './model/commit.ts'
 export { CommitDraft } from './model/commit-draft.ts'
 export { Entry, EntryData, EntryMetadata } from './model/entry.ts'
