@@ -6,7 +6,6 @@ export interface Entry {
 
 export interface EntryMetadata {
   type: string
-  referencedBy?: string[]
 }
 
 export type EntryData = Record<string, unknown> | null
