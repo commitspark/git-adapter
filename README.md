@@ -29,6 +29,12 @@ The following conventions should be applied in adapter implementations:
       entries.
 * **Entry hashes**: The hash returned for an entry should be the Git blob hash of the entry file. Any other hash
   is acceptable as long as equal hashes imply equal file content.
+* **Commit precondition**: `createCommit()` must only move the branch to the new commit if the branch still points
+  to `parentSha` of the commit draft, and must otherwise throw a `GitAdapterError` with code `CONFLICT`. Callers
+  validate a commit draft against the state of `parentSha` (e.g. entry versions and references) and repeat this
+  validation against the new branch head on `CONFLICT`, so that no change is written onto a state it was not
+  validated against. Adapters should perform this check atomically with the branch update. Adapters whose storage
+  does not allow this must check the branch head as late as possible and document the remaining limitation.
 * **Errors**: Adapters should throw known errors using the `GitAdapterError` class with one of the predefined
   `ErrorCode` values so that callers are able to handle errors meaningfully.
 
