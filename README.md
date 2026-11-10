@@ -35,6 +35,9 @@ The following conventions should be applied in adapter implementations:
   validation against the new branch head on `CONFLICT`, so that no change is written onto a state it was not
   validated against. Adapters should perform this check atomically with the branch update. Adapters whose storage
   does not allow this must check the branch head as late as possible and document the remaining limitation.
+* **Commit message**: `message` of a commit draft is a single line, and the optional `body` holds further details.
+  Adapters should pass both separately to APIs that support it and otherwise separate them with a blank line in the
+  Git commit message.
 * **Errors**: Adapters should throw known errors using the `GitAdapterError` class with one of the predefined
   `ErrorCode` values so that callers are able to handle errors meaningfully.
 

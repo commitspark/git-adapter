@@ -12,6 +12,15 @@ export interface CommitDraft {
    * new branch head instead of overwriting changes they have not seen.
    */
   parentSha: string
+  /**
+   * Commit message summarizing the change in a single line, i.e. without line breaks.
+   */
   message: string
+  /**
+   * Optional details of the change, which may span multiple lines. Adapters should pass the body separately from
+   * `message` to APIs that support it, and otherwise append it to `message` in the Git commit message, separated by a
+   * blank line.
+   */
+  body?: string
   entries: EntryDraft[]
 }
