@@ -38,6 +38,8 @@ The following conventions should be applied in adapter implementations:
 * **Commit message**: `message` of a commit draft is a single line, and the optional `body` holds further details.
   Adapters should pass both separately to APIs that support it and otherwise separate them with a blank line in the
   Git commit message.
+* **Schema**: If `schema` of a commit draft is set, `createCommit()` must write it to the schema file in the same
+  commit as the entry drafts, so that schema and entries can be changed together, e.g. to rename a field.
 * **Errors**: Adapters should throw known errors using the `GitAdapterError` class with one of the predefined
   `ErrorCode` values so that callers are able to handle errors meaningfully.
 
