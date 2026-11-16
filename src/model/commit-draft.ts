@@ -23,8 +23,7 @@ export interface CommitDraft {
    */
   body?: string
   /**
-   * GraphQL schema definition (SDL) to write to the schema file in the same commit as the entries. The schema file is
-   * left unchanged if not set.
+   * Schema to write to the schema file in the same commit as the entries. The schema file is left unchanged if not set.
    */
   schema?: string
   entries: EntryDraft[]
