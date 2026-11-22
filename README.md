@@ -27,6 +27,11 @@ The following conventions should be applied in adapter implementations:
       case cannot be checked out correctly on case-insensitive file systems.
     * **Nesting depth**: Adapters that cannot support a nesting depth must throw an error instead of ignoring
       entries.
+* **Refs**: `getLatestCommitHash()` must resolve branch names, tag names and commit hashes, so that callers can pass a
+  returned commit hash in later requests to read exactly the same state, e.g. further pages of a list.
+* **Commit reads**: `getEntryHashes()`, `getEntriesByIds()` and `getSchema()` must return the state of the given
+  commit, never another state such as uncommitted files, as callers cache results by commit hash indefinitely. The
+  order of entries returned by `getEntryHashes()` has no meaning, as callers order entries themselves.
 * **Entry hashes**: The hash returned for an entry should be the Git blob hash of the entry file. Any other hash
   is acceptable as long as equal hashes imply equal file content.
 * **Commit precondition**: `createCommit()` must only move the branch to the new commit if the branch still points
