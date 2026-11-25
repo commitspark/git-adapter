@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Add error code `BAD_REPOSITORY_DATA` for stored files that cannot be read, so that callers report such files as
+  invalid repository data with the same code for every adapter
+
+### Changed
+
+- Require adapters to resolve commit hashes as `ref` in `getLatestCommitHash()` and to return only the state of the
+  given commit from reads, so that callers can read further pages from the same commit and cache results by commit
+  hash
+- Require adapters to list entry files with invalid names and to use error codes `NOT_FOUND`, `BAD_REQUEST` and
+  `INTERNAL_ERROR` as specified in the README, so that callers handle these cases the same way for every adapter
+
 ## [2.0.0-beta.5] - 2026-11-16
 
 ### Added
