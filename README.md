@@ -27,14 +27,14 @@ The following conventions should be applied in adapter implementations:
       case cannot be checked out correctly on case-insensitive file systems.
     * **Nesting depth**: Adapters that cannot support a nesting depth must throw an error instead of ignoring
       entries.
-* **Refs**: `getLatestCommitHash()` must resolve branch names, tag names (annotated tags to the commit they point to)
-  and full commit hashes, so that callers can pass a returned commit hash in later requests to read exactly the same
-  state, e.g. further pages of a list.
+* **Ref resolution**: `getLatestCommitHash()` must resolve a branch name, tag name or full commit hash to a commit
+  hash: an annotated tag to the commit it points to, a commit hash to itself.
 * **Commit reads**: `getEntryHashes()`, `getEntriesByIds()` and `getSchema()` must return the state of the given
-  commit, never another state such as uncommitted files, as callers cache results by commit hash indefinitely. The
-  order of entries returned by `getEntryHashes()` has no meaning, as callers order entries themselves.
-* **Entry listing**: `getEntryHashes()` must list every entry file, also if its name is no valid entry ID, so that
-  callers can report it as invalid repository data instead of silently missing an entry.
+  commit and nothing else, such as uncommitted changes, so that callers can cache results per commit hash
+  indefinitely.
+* **Entry listing**: `getEntryHashes()` must list every entry file, including files whose name is not a valid entry
+  ID, so that callers can report them as invalid repository data. Adapters may return entries in any order; sorting is
+  the responsibility of callers.
 * **Entry hashes**: The hash returned for an entry should be the Git blob hash of the entry file. Any other hash
   is acceptable as long as equal hashes imply equal file content.
 * **Commit precondition**: `createCommit()` must only move the branch to the new commit if the branch still points
@@ -47,11 +47,12 @@ The following conventions should be applied in adapter implementations:
   Git commit message.
 * **Schema**: If `schema` of a commit draft is set, `createCommit()` must write it to the schema file in the same
   commit as the entry drafts, so that schema and entries can be changed together, e.g. to rename a field.
-* **Errors**: Adapters should throw known errors using the `GitAdapterError` class with one of the predefined
-  `ErrorCode` values so that callers are able to handle errors meaningfully: `NOT_FOUND` for an unknown ref or commit
-  and a missing schema file, `BAD_REQUEST` for invalid arguments such as an invalid entry ID, `BAD_REPOSITORY_DATA`
-  for stored files that cannot be read, such as an entry file without a YAML mapping, and `INTERNAL_ERROR` for
-  failures of the storage or the adapter setup.
+* **Errors**: Adapters should throw a `GitAdapterError` with one of the predefined `ErrorCode` values, in particular:
+    * `NOT_FOUND`: Unknown ref or commit, or missing schema file.
+    * `BAD_REQUEST`: Invalid argument, e.g. an invalid entry ID.
+    * `BAD_REPOSITORY_DATA`: Stored file that cannot be read, e.g. an entry file without a YAML mapping.
+    * `INTERNAL_ERROR`: Failure of the storage or of the adapter setup.
+    * `CONFLICT`: See **Commit precondition**.
 
 # License
 
