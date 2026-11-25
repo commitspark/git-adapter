@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add error code `BAD_REPOSITORY_DATA` for stored files that cannot be read, so that callers report such files as
+  invalid repository data with the same code for every adapter
+
 ### Changed
 
 - Require adapters to resolve commit hashes as `ref` in `getLatestCommitHash()` and to return only the state of the
