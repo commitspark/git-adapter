@@ -23,7 +23,7 @@ export interface GitAdapter {
   getSchema(commitHash: string): Promise<string>
   /**
    * Resolves a branch name, tag name or full commit hash to a commit hash. An annotated tag resolves to the commit it
-   * points to, a commit hash to itself.
+   * points to, a commit hash to itself. A name that is both a branch name and a tag name resolves to the branch.
    */
   getLatestCommitHash(ref: string): Promise<string>
   createCommit(commitDraft: CommitDraft): Promise<Commit>

@@ -28,7 +28,8 @@ The following conventions should be applied in adapter implementations:
     * **Nesting depth**: Adapters that cannot support a nesting depth must throw an error instead of ignoring
       entries.
 * **Ref resolution**: `getLatestCommitHash()` must resolve a branch name, tag name or full commit hash to a commit
-  hash: an annotated tag to the commit it points to, a commit hash to itself.
+  hash: an annotated tag to the commit it points to, a commit hash to itself. A name that is both a branch name and a
+  tag name must resolve to the branch, unlike in Git, so that reads and commits through that name use the same branch.
 * **Commit reads**: `getEntryHashes()`, `getEntriesByIds()` and `getSchema()` must return the state of the given
   commit and nothing else, such as uncommitted changes, so that callers can cache results per commit hash
   indefinitely.

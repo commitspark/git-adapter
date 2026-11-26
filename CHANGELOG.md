@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Require adapters to resolve a name that is both a branch name and a tag name to the branch in
+  `getLatestCommitHash()`, so that reads and commits through that name use the same branch for every adapter
+
 ## [2.0.0-beta.6] - 2026-11-26
 
 ### Added
