@@ -49,9 +49,10 @@ The following conventions should be applied in adapter implementations:
 * **Schema**: If `schema` of a commit draft is set, `createCommit()` must write it to the schema file in the same
   commit as the entry drafts, so that schema and entries can be changed together, e.g. to rename a field.
 * **Errors**: Adapters should throw a `GitAdapterError` with one of the predefined `ErrorCode` values, in particular:
-    * `NOT_FOUND`: Unknown ref or commit, or missing schema file.
+    * `NOT_FOUND`: Unknown ref or commit.
     * `BAD_REQUEST`: Invalid argument, e.g. an invalid entry ID.
-    * `BAD_REPOSITORY_DATA`: Stored file that cannot be read, e.g. an entry file without a YAML mapping.
+    * `BAD_REPOSITORY_DATA`: Missing schema file, or stored file that cannot be read, e.g. an entry file without a YAML
+      mapping.
     * `INTERNAL_ERROR`: Failure of the storage or of the adapter setup.
     * `CONFLICT`: See **Commit precondition**.
 

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Require adapters to report a missing schema file with `BAD_REPOSITORY_DATA` instead of `NOT_FOUND`, so that callers
+  can tell an incomplete repository from an unknown ref or commit
+
 ## [2.0.0-beta.7] - 2026-11-26
 
 ### Changed
